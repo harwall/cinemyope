@@ -1,0 +1,17 @@
+// @import "node_modules/remodal/dist/remodal";
+// @import "node_modules/remodal/dist/remodal-default-theme";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+@import "layouts/app";
+@import "app/home";
+@import "app/game";
+
+//@import "app/error";
+
+@import "components/inputs";
+@import "components/popin";

@@ -1,0 +1,138 @@
+a {
+    cursor: pointer;
+}
+button, .btn {
+    min-width: 175px;
+    z-index: 2;
+    color: $secondary-color;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 0 15px 0;
+    padding: 15px 0 12px 0;
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+    font-weight: $font-bold;
+    background: $primary-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'avalon-medium', arial, sans-serif;
+    letter-spacing: 1px;
+    @media screen and (min-width: 800px) {
+        min-width: 200px;
+        padding: 20px 0 18px 0;
+        font-size: 28px;
+    }
+}
+button:active {
+    top: 1px;
+    background: $btn-active;
+    box-shadow: 0.2px 0.2px 0.2px 0.2px;
+}
+
+button::-moz-focus-inner {
+    border:0;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    padding: 15px 10px;
+    min-width: 250px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    outline:none;
+    margin: 4px auto;
+    width: 100%;
+    font-size: 16px;
+    @media screen and (min-width: 800px) {
+      font-size: 20px;
+    }
+}
+input::placeholder {
+    color: black;
+    font-size: 16px;
+    font-family: 'avalon-medium', arial, sans-serif;
+    @media screen and (min-width: 800px) {
+      font-size: 20px;
+    }
+}
+input:required:invalid {
+    border: 2px solid rgba(214, 29, 0, 0.6);
+}
+
+input:required:valid {
+    border:2px solid rgba(29, 152, 66, 0.6);
+}
+
+.checkbox {
+    width: 100%;
+    margin:0 auto;
+    padding:10px 0;
+    display:flex;
+    justify-content: space-around;
+    &--home {
+        width: 90%;
+        margin: 20px 0;
+        padding: 0 24px;
+    }
+    label{
+        color: $primary-color;
+        vertical-align: middle;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+    }
+    input{
+        display: none;
+    }
+    &__label{
+        width: calc(100% - 25px );
+        font-size:$font-s;
+        text-align: left;
+        color: $primary-color;
+        @media screen and (min-width: 800px) {
+          font-size: 18px;
+        }
+    }
+    &__custom{
+        float: left;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        margin-right: 5px;
+        background-color: white;
+        border: $primary-color 2px solid;
+        @media screen and (min-width: 800px) {
+            border: $primary-color 3px solid;
+        }
+    }
+    &__custom:after{
+        position: absolute;
+        background: transparent;
+        margin: 4px auto;
+        content: "";
+        left: 4px;
+        opacity: 0;
+        -webkit-transition: all .2s ease-in;
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        width: 9px;
+        height: 5px;
+        border-top: none;
+        border-right: none;
+        border-left: 3px solid black;
+        border-bottom: 3px solid black;
+        @include transform(rotate(-45deg));
+    }
+    input:checked + .checkbox__custom:after{
+        opacity:1;
+    }
+}
+
